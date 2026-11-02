@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-night: #0e1a2b;
+  --color-night-soft: #14233a;
+  --color-koa: #2bd58a;
+  --color-koa-dark: #177f52; /* 4.7:1 sobre paper */
+  --color-taller: #ff8a3d;
+  --color-taller-dark: #bf4c00; /* texto naranja legible (4.6:1) */
+  --color-taller-soft: #fff6ee;
+  --color-paper: #f6f8fb;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-paper font-sans text-night antialiased; }
+  h1, h2, h3, h4 { @apply font-display; }
+  section[id] { scroll-margin-top: 4.5rem; }
+}
+
+/* Clases reutilizables para no repetir Tailwind */
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-350 px-5 md:px-10 lg:px-18; }
+  .section-y { @apply py-16 md:py-20 lg:py-24; }
+
+  .eyebrow { @apply mb-3 text-xs font-bold uppercase tracking-[0.14em] text-koa-dark; }
+  .eyebrow-taller { @apply text-taller-dark; }
+  .section-title { @apply text-3xl font-bold leading-[1.1] md:text-4xl lg:text-5xl; }
+
+  .btn { @apply inline-flex cursor-pointer items-center justify-center rounded-xl px-6 py-3.5 text-sm font-semibold transition duration-200 hover:-translate-y-0.5; }
+  .btn-koa { @apply bg-koa text-night hover:bg-[#3de39a]; }
+  .btn-taller { @apply bg-taller text-night hover:bg-[#ff9a57]; }
+  .btn-ghost { @apply border border-white/20 bg-transparent text-white hover:bg-white/5; }
+
+  .chip { @apply rounded-full border px-3 py-1 text-xs; }
+  .chip-taller { @apply border-orange-200 bg-white text-orange-800; }
+  .chip-koa { @apply border-transparent bg-koa/10 text-koa; }
+
+  .icon-box { @apply grid shrink-0 place-items-center rounded-2xl; }
+}

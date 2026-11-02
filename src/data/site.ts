@@ -22,7 +22,10 @@ export const site = {
     country: 'CR',
   },
   hours: { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '18:00' }, // TODO
-  social: [] as string[], // TODO: URLs de Facebook, Instagram, LinkedIn…
+  social: [
+    { name: 'Instagram', url: 'https://www.instagram.com/koabyte' },
+    { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61579421273775&locale=es_LA' },
+  ] as { name: string; url: string }[], // TODO: URLs de Facebook, Instagram, LinkedIn…
 }
 
 /** Enlace de WhatsApp con el mensaje prellenado (ya codificado para URL). */

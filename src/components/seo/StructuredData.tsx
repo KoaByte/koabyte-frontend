@@ -56,7 +56,7 @@ export default function StructuredData() {
           contactType: 'customer service',
           availableLanguage: ['Spanish', 'English'],
         },
-        ...(site.social.length ? { sameAs: site.social } : {}),
+        ...(site.social.length ? { sameAs: site.social.map((s) => s.url) } : {}),
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: t.schema.catalog,

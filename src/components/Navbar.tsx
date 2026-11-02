@@ -7,6 +7,7 @@ import Button from './ui/Button'
 import Logo from './ui/Logo'
 import LanguageSwitcher from './LanguageSwitcher'
 import MobileMenu from './MobileMenu'
+import SocialLinks from './SocialLinks'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -14,6 +15,7 @@ export default function Navbar() {
   const close = useCallback(() => setOpen(false), [])
   const t = useT()
   const { navLinks } = useContent()
+  
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-night/85 backdrop-blur">
@@ -36,6 +38,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <Button href="#contacto" className="hidden py-3! md:inline-flex">{t.ui.quote}</Button>
+          <SocialLinks mobileHidden={true} />
           <button
             type="button"
             aria-label={t.ui.openMenu}

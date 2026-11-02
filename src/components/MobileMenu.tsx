@@ -8,6 +8,7 @@ import { useT } from '../i18n'
 import Button from './ui/Button'
 import Logo from './ui/Logo'
 import LanguageSwitcher from './LanguageSwitcher'
+import SocialLinks from './SocialLinks'
 
 interface Props { open: boolean; active: string; onClose: () => void }
 
@@ -121,7 +122,10 @@ export default function MobileMenu({ open, active, onClose }: Props) {
             </nav>
 
             <div className="flex flex-col gap-3 px-5 pb-8 pt-6 md:px-8">
-              <LanguageSwitcher className="mb-2 self-start" />
+              <div className='flex justify-between'>
+                <LanguageSwitcher className="mb-2 self-start" />
+                <SocialLinks />
+              </div>
               <Button href="#contacto" onClick={onClose} className="py-4! text-lg!">{t.ui.quote}</Button>
               <Button href="#reparaciones" variant="ghost" onClick={onClose} className="py-4! text-lg!">{t.ui.repairMine}</Button>
             </div>
